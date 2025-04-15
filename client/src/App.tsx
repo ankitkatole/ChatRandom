@@ -16,7 +16,8 @@ function App() {
   useEffect(() => {
     if (!joined || !roomCode || !username) return;
 
-    const ws = new WebSocket('ws://localhost:8080');
+    const ws = new WebSocket('wss://chatrandom-8dey.onrender.com');
+
     wsRef.current = ws;
 
     ws.onopen = () => {
