@@ -5,6 +5,7 @@ const wss = new WebSocketServer({ port: 8080 });
 let allSockets: { socket: WebSocket; room: string; username: string }[] = [];
 
 wss.on('connection', (ws: WebSocket) => {
+  //@ts-ignore
   ws.on('message', (message: WebSocket.Data) => { 
     const parsedMessage = JSON.parse(message.toString());
 
